@@ -399,3 +399,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Own
+team_with_reviewers.txt
+reviewer_checklist.txt
