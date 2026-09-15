@@ -43,7 +43,7 @@ namespace PrDistribute
 
             return [.. Recurse(availableReviewers, 0, n)];
 
-            IEnumerable<HashSet<Reviewer>> Recurse(List<Reviewer> src, int index, int left)
+            static IEnumerable<HashSet<Reviewer>> Recurse(List<Reviewer> revs, int index, int left)
             {
                 if (left == 0)
                 {
@@ -51,11 +51,11 @@ namespace PrDistribute
                     yield break;
                 }
 
-                for (int i = index; i <= src.Count - left; i++)
+                for (int i = index; i <= revs.Count - left; i++)
                 {
-                    foreach (var tail in Recurse(src, i + 1, left - 1))
+                    foreach (HashSet<Reviewer> tail in Recurse(revs, i + 1, left - 1))
                     {
-                        tail.Add(src[i]);
+                        tail.Add(revs[i]);
                         yield return tail;
                     }
                 }
