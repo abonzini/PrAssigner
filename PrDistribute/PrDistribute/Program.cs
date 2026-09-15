@@ -118,7 +118,6 @@ namespace PrDistribute
                     break;
                 }
             } // With this there's a better jump to iterate through teams
-            int fraction = teams.Count / divs; // Approx index of each div
             // Obtain reviewers
             foreach (string reviewer in File.ReadAllLines(Path.Combine(directory, "reviewers.csv")))
             {
