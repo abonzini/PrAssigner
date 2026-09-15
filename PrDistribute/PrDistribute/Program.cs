@@ -212,7 +212,7 @@ namespace PrDistribute
                 exportedDoc.AppendLine(team.Name);
                 foreach (Reviewer rev in team.Reviewers)
                 {
-                    exportedDoc.AppendLine($"\t\t- {rev.Name}");
+                    exportedDoc.AppendLine($"\t- {rev.Name} (/10):");
                     if (!reviewersDuties.ContainsKey(rev.Name))
                     {
                         reviewersDuties[rev.Name] = [];
